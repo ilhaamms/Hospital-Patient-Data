@@ -49,9 +49,7 @@ func (p *PasienModel) FindAll() ([]entities.Pasien, error) {
 		} else {
 			pasien.JenisKelamin = "Perempuan"
 		}
-		// 2006-01-02 => yyyy-mm-dd
 		tgl_lahir, _ := time.Parse("2006-01-02", pasien.TanggalLahir)
-		// 02-01-2006 => dd-mm-yyyy
 		pasien.TanggalLahir = tgl_lahir.Format("02-01-2006")
 
 		dataPasien = append(dataPasien, pasien)
